@@ -62,14 +62,14 @@ Virtual Host Estático (portal.empresa.local):
 curl -I http://portal.empresa.local
 ```
 
-<img width="631" height="257" alt="image" src="https://github.com/user-attachments/assets/88c4238a-b243-4306-a937-7cde3ef60fd3" />
+<img width="538" height="246" alt="image" src="https://github.com/user-attachments/assets/b7b358b4-b1c0-4b32-b513-ceeba9de5e84" />
 
 Virtual Host Proxy (app-gestion.empresa.local):
 ```text
 curl -I http://app-gestion.empresa.local
 ```
 
-<img width="583" height="192" alt="image" src="https://github.com/user-attachments/assets/c69dabdb-4907-4a57-bb95-739b45e59784" />
+<img width="615" height="180" alt="image" src="https://github.com/user-attachments/assets/ff261957-930f-4209-a168-4a09ea69ace6" />
 
 ## B. Auditoría de Seguridad en Endpoint Restringido (/privado/)
 Acceso Denegado (Sin cabecera de autenticación):
@@ -77,7 +77,7 @@ Acceso Denegado (Sin cabecera de autenticación):
     curl -i -H "Host: app-gestion.empresa.local" http://localhost/privado/
 ```
 
-<img width="686" height="277" alt="image" src="https://github.com/user-attachments/assets/0dd7d416-1e82-4545-ad1c-bbb61e11cb66" />
+<img width="661" height="278" alt="image" src="https://github.com/user-attachments/assets/4f3ae5aa-5a65-4f78-9225-7e00260e6a80" />
 
 Resultado: HTTP/1.1 403 Forbidden (Acceso rechazado por Apache).
 
@@ -86,11 +86,12 @@ Acceso Permitido (Con cabecera X-Auth-Token: DAW2026):
 curl -i -H "Host: app-gestion.empresa.local" -H "X-Auth-Token: DAW2026" http://localhost/privado/
 ```
 
-<img width="736" height="225" alt="image" src="https://github.com/user-attachments/assets/2db9b12f-a4d2-48cc-9736-6633853c2d12" />
+<img width="714" height="219" alt="image" src="https://github.com/user-attachments/assets/df7d8923-fb6e-40d9-837b-db574a44c5a2" />
+
 
 Resultado: HTTP/1.1 200 OK (Acceso concedido).
 
 ## C. Auditoría de Trazabilidad en Logs (apache/logs/access.log)
 Comprobación en los ficheros de log de la IP real del cliente registrada (127.0.0.1) junto con los códigos HTTP 403 y 200:
 
-<img width="850" height="209" alt="image" src="https://github.com/user-attachments/assets/bf25c23a-310f-4619-bbdb-bed7e13aeb30" />
+<img width="802" height="163" alt="image" src="https://github.com/user-attachments/assets/577e2f45-e653-48fe-bbc8-301d17fa234a" />
